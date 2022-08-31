@@ -1,0 +1,43 @@
+### Reference: github/gitignore/c++.gitignore
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries (Modified OnMyOwn: deleted .lib due to glfw3.lib)
+*.lai
+*.la
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+### Written On my Own
+# VS2022 Solution(sln) File
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vs
+
+# x64 compile and linking files
+x64/

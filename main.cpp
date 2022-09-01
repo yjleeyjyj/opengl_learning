@@ -1,19 +1,20 @@
 #include<iostream>
 #include<glad/glad.h>
-#include<GLFW/\glfw3.h>
+#include<GLFW/glfw3.h>
 
+// Vertex Shader source code
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
 "void main()\n"
 "{\n"
-"	gl_position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
 "}\0";
-
+//Fragment Shader source code
 const char* fragmentShaderSource = "#version 330 core\n"
-"out vec FragColor;\n"
+"out vec4 FragColor;\n"
 "void main()\n"
 "{\n"
-"	FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
+"   FragColor = vec4(0.8f, 0.3f, 0.02f, 1.0f);\n"
 "}\n\0";
 
 int main(void)
@@ -30,13 +31,6 @@ int main(void)
 	// - CORE : only contains Modern functions (GLFW_OPENGL_CORE_PROFILE)
 	// - COMPATIBILITY : contains Modern and Outdated functions. (GLFW_OPENGL_COMPAT_PROFILE)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	
-	GLfloat vertices[] =
-	{
-		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
-	};
 
 	// Create Window Object
 	// Parameter : Width, Height, Title, Use Full Screen , X(Don't Care)
@@ -75,7 +69,12 @@ int main(void)
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
-
+	GLfloat vertices[] =
+	{
+		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
+		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
+	};
 
 	GLuint VAO, VBO;
 
@@ -94,9 +93,9 @@ int main(void)
 	glBindVertexArray(0);
 
 	// Specify the color of the Background
-	glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // R, G, B, transparency
+	//glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // R, G, B, transparency
 	// Clean the back buffer and assign the new color on it
-	glClear(GL_COLOR_BUFFER_BIT);
+	//glClear(GL_COLOR_BUFFER_BIT);
 
 	// Swap the Back Buffer with the front buffer 
 	glfwSwapBuffers(window);

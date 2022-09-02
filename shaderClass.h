@@ -20,6 +20,6 @@ public:
 	void Delete();
 
 	void compileErrors(unsigned int shader, const char* size);
-}
+};
 
 #endif
